@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Dieta</title>
+	  <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	  <link href="https://fonts.googleapis.com/css?family=Neucha" rel="stylesheet">
+	  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+	  <link href="css/animate.css" rel="stylesheet" type="text/css">
+	  <script type='text/javascript' src='http://paperjs.org/assets/js/paper.js'></script>
+      <link href="css/style.css" rel="stylesheet" type="text/css">
+	</head>
+
+  <body>
+
+  <!-- start Main screen -->
+
+	<section class="main-screen wow">
+		<div class="menu">
+				<div class="burger text-center">
+					<a href="#">
+						<img src="img/burger.png">
+						<h3>Меню</h3>
+					</a>
+				</div>
+			</div>
+		<div class="main-screen-wrapper text-center">
+			<canvas id="sheet"></canvas>
+			<div class="main-screen-title text-center">
+				<h2>зачеркни слово «диета»,<br> и твой мир питания уже не будет прежним</h2>
+				<h1>Диета</h1>
+			</div>
+			<div class="button-order text-center">
+				<a href="#">
+					<h3>Заказать книгу</h3>
+				</a>
+			</div>
+		</div>
+	</section>
+
+  <!-- end Main screen -->
+
+
+  <!-- start Second Screen -->
+  	<section class="second-screen wow fadeInUp">
+	  	<div class="second-screen-wrapper text-center">
+	  		<div class="second-screen-book text-center">
+	  			<div class="book">
+		  			<div class="left-wing wow" data-wow-offset="200"
+		  			data-wow-delay="0.5s">
+		  				<img src="img/left-wing.png">
+		  			</div>
+	  				<div class="nimb wow fadeInUp" data-wow-offset="200" data-wow-duration="2s" data-wow-delay="0.5s">
+	  					<img src="img/nimb.png">
+	  				</div>
+	  				<div class="pagination text-center">
+	  					<img src="img/arrow-left.png">
+	  					<p>можно листать</p>
+	  					<img src="img/arrow-right.png">
+	  				</div>
+	  				<img src="img/book.png">
+	  				<div class="right-wing wow" data-wow-offset="200"
+	  				data-wow-delay="0.5s">
+	  					<img src="img/right-wing.png">
+	  				</div>
+	  				<div class="food-tracker">
+	  					<img src="img/tracker.png">
+	  				</div>
+	  			</div>
+	  		</div>
+	  		<div class="booboom">
+	  			<div class="booboom-image wow bounceIn" data-wow-offset="200" data-wow-duration="2s" data-wow-delay="0.5s">
+	  				<img src="img/boom.png">
+	  			</div>
+	  			<p><a class="quick-link" href="#">*нажми сюда</a>, чтобы узнать<br> шокирующую правду</p>
+	  		</div>
+	  		<div class="about text-center">
+	  			<div class="about-book text-center">
+	  				<a href="#"><h3>О КНИГЕ</h3></a>
+	  			</div>
+	  			<div class="about-tracker text-center">
+	  				<a href="#"><h3>О ТРЕКЕРЕ</h3></a>
+	  			</div>
+	  		</div>
+	  		<div class="reasons">
+	  			<img src="img/reasons.png">
+	  		</div>
+	  	</div>
+  	</section>
+  <!-- end Second Screen -->
+
+
+<script src="js/wow.min.js"></script>
+	
+	<script>
+	 new WOW().init();
+	</script>
+
+<script>
+	var link=document.querySelector("#sheet");
+	var mainscreen=document.querySelector(".main-screen");
+	var secondscreen=document.querySelector(".second-screen");
+
+	link.addEventListener("click", function(event) {
+		event.preventDefault();
+		mainscreen.classList.add("hidden");
+		secondscreen.classList.add("show")
+
+	})
+	
+</script>
+
+
+<script type="text/paperscript" canvas="sheet">
+        var path;
+
+        function onMouseDown(event) {
+            // If we produced a path before, deselect it:
+            if (path) {
+                path.selected = false;
+            }
+
+            // Create a new path and set its stroke color to black:
+            path = new Path({
+                segments: [event.point],
+                strokeColor: '#00b7f4',
+                strokeWidth: 13
+            });
+        }
+
+        // While the user drags the mouse, points are added to the path
+        // at the position of the mouse:
+        function onMouseDrag(event) {
+            path.add(event.point);
+        }
+
+        // When the mouse is released, we simplify the path:
+        function onMouseUp(event) {
+            path.simplify();
+        }
+
+       
+    </script>
+
+	
+  </body>
+
+</html>

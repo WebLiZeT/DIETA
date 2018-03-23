@@ -1,0 +1,281 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 23px;
+    line-height: 30px;
+    font-family: 'Neucha', cursive;
+    color: #ffffff;
+}
+
+p,
+ul,
+h2,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+ p {
+    color: #000000;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 16px;
+    display: block;
+}
+.text-center {
+    text-align: center;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+
+
+/* start Main screen */
+.main-screen {
+    height: 100vh;
+    background: url('../img/main-bg.jpg') no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    display: table;
+    cursor: url('../img/cursor.png'), pointer;
+}
+
+.main-screen-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.main-screen-title {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+}
+
+.main-screen-title h1 {
+    font-size: 223px;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+.main-screen-title h2 {
+    font-size: 23px;
+    line-height: 31px;
+    text-transform: uppercase;
+    z-index: 3;
+}
+
+#sheet {
+    z-index: 1;
+    width: 800px;
+    height: 500px;
+    position: relative;
+    
+}
+
+.burger {
+    padding-top: 5px;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.burger img {
+    width: 45%;
+}
+
+.button-order {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    background: url('../img/cloud.png') no-repeat top center;
+    width: 200px;
+    height: 70px;
+}
+
+.button-order a {
+    color: #000000;
+}
+/* end Main screen */
+
+
+/* start Second screen */
+
+.second-screen {
+    height: 100%;
+    background: url('../img/bg-2.jpg') no-repeat top center;
+    background-size: cover;
+    width: 100%;
+    padding: 5px; 
+    display: none;
+}
+
+.second-screen-wrapper {
+    position: relative;
+}
+
+.pagination p {
+    color: #ffffff;
+    display: inline;
+}
+
+.book {
+    margin-top: 100px;
+    position: relative; 
+}
+
+.book > img {
+    width: 25%;
+    position: relative;
+    z-index: 34;
+}
+
+.left-wing img,
+.right-wing img {
+    width: 80%;
+}
+
+.left-wing,
+.right-wing,
+.nimb {
+    position: absolute;
+    opacity: 0.3;
+}
+
+.left-wing {
+    top: -7%;
+    left: 20%;
+    z-index: 1;
+    animation: move-1 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.right-wing {
+    top: -7%;
+    right: 21%;
+    z-index: 1;
+    animation: move-2 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.nimb {
+    top: -15%;
+    left: 45%;
+}
+
+.food-tracker {
+    position: absolute;
+    bottom: -41%;
+    right: 12%;
+    z-index: 35;
+}
+
+.food-tracker img {
+    width: 80%;
+}
+
+.reasons {
+    width: 30%;
+    padding: 5px;
+    margin-top: 100px;
+    margin-left: 10%;
+}
+
+.booboom {
+    position: absolute;
+    top: -8%;
+    right: 2%;
+    width: 260px;
+    height: 260px;
+}
+
+.booboom p {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #ffffff;
+    line-height: 12px;
+}
+
+.quick-link {
+    color: #00b7f4;
+    display: inline;
+}
+
+.about {
+    position: absolute;
+    top: 30%;
+    right: 16%;
+}
+
+.about-book {
+    background: url('../img/about-book.png') no-repeat top center;
+    width: 200px;
+    height: 55px; 
+}
+
+.about-tracker {
+    background: url('../img/about-tracker.png') no-repeat top center;
+    width: 200px;
+    height: 55px; 
+}
+
+.about-book h3,
+.about-tracker h3 {
+    color: #00b7f4;
+    font-size: 33px;
+    line-height: 45px;
+}
+
+@keyframes move-1 {
+    from {
+        opacity: 0;
+        left: 30%;
+    }
+    to {
+        opacity: 0.3;
+        left: 20%;
+    }
+}
+
+@keyframes move-2 {
+    from {
+        opacity: 0;
+        right: 31%;
+    }
+    to {
+        opacity: 0.3;
+        right: 21%;
+    }
+}
+
+@keyframes move-1 {
+    from {
+        opacity: 0;
+        left: 30%;
+    }
+    to {
+        opacity: 0.3;
+        left: 20%;
+    }
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+/* end Second screen */
